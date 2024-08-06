@@ -1,1 +1,2 @@
+@import './assets/fonts/fonts.scss'; /** should be import at start so fonts become available in below style files */
 @import './assets/styles/styles.scss';
