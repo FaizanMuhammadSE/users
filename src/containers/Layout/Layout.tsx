@@ -11,7 +11,7 @@ export const Layout: FC<ILayoutProps> = ({ children }) => {
           Random Users
         </Typography>
       </Box>
-      {children}
+      <Box p={3}>{children}</Box>
     </Box>
   );
 };

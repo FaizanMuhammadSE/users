@@ -1,10 +1,14 @@
-import { Typography, ThemeProvider } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import { theme } from './theme';
+import { Layout } from './containers/Layout/Layout';
+import { Router } from './routes';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Typography variant='h1'>Coming Soon</Typography>
+      <Layout>
+        <Router />
+      </Layout>
     </ThemeProvider>
   );
 }
