@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.typingText {
+  text-align: center;
+  overflow: hidden; /* Hides the overflowing text */
+  white-space: nowrap; /* Ensures text stays on one line */
+  animation: typing 4s steps(40, end);
+}
+
+.typingText + .typingText {
+  margin-top: 10px; /* Adds space between lines of text */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
