@@ -101,3 +101,10 @@ Both Bonus Tasks completed
 
 - Integrate Map
 - Show Nationality Flag
+
+# Blockers/Issues Faced
+
+- in the documentation of randomUser API it was mentioned that gender parameter works, but when I integrated things
+  and ran the application, gender parameter was not working fine on API level, I've integrated everything correctly on frontend side, But API is not returning result according to provided gender parameter.
+  - Try to hit following API through postman you will see are results are not according to given filter
+  - `https://randomuser.me/api/?page=8&results=5&seed=abc&gender=female`
