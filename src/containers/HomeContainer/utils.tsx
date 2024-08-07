@@ -13,23 +13,32 @@ export const columnDefs = [
 ];
 
 export const getRowsFromData = (data: AllUsersResponseType | undefined) =>
-  data?.results.map(
-    (user) =>
-      ({
-        id: user.login?.uuid,
-        rowCells: [
-          <InfoWithMedia
-            url={user.picture?.thumbnail ?? ''}
-            alt='profile image'
-            dimension={50}
-            circularMedia
-            value={`${user.name?.first} ${user.name?.last}`}
-          />,
-          nationalityFullForm(user.nat ?? ''),
-          user.location?.city,
-          user.email,
-          user.phone,
-          convertUTCIntoLocalDateTime(user.dob?.date ?? ''),
-        ],
-      } as IRow)
-  ) ?? [];
+  data?.results.map((user) => {
+    const userName = `${user.name?.first} ${user.name?.last}`;
+    const nationality = user.nat;
+    return {
+      id: user.login?.uuid,
+      rowCells: [
+        <InfoWithMedia
+          url={user.picture?.thumbnail ?? ''}
+          alt='profile image'
+          dimension={50}
+          circularMedia
+          value={userName}
+        />,
+        <InfoWithMedia
+          mediaComponent={
+            <span
+              className={`fi fi-${nationality?.toLowerCase()}`}
+              style={{ height: '50px', width: '50px', marginRight: '5px' }}
+            />
+          }
+          value={nationalityFullForm(nationality ?? '')}
+        />,
+        user.location?.city,
+        user.email,
+        user.phone,
+        convertUTCIntoLocalDateTime(user.dob?.date ?? ''),
+      ],
+    } as IRow;
+  }) ?? [];

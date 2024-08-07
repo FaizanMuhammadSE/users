@@ -8,20 +8,25 @@ export const InfoWithMedia: FC<IInfoWithMedia> = ({
   dimension,
   alt,
   circularMedia,
+  mediaComponent,
   value,
   ...boxProps
 }) => {
   return (
     <Box className={styles.container} {...boxProps}>
-      <img
-        src={url}
-        alt={alt}
-        style={{
-          height: dimension ?? 'auto',
-          width: dimension ?? 'auto',
-          borderRadius: circularMedia ? '50%' : '0',
-        }}
-      />
+      {mediaComponent ? (
+        mediaComponent
+      ) : (
+        <img
+          src={url}
+          alt={alt}
+          style={{
+            height: dimension ?? 'auto',
+            width: dimension ?? 'auto',
+            borderRadius: circularMedia ? '50%' : '0',
+          }}
+        />
+      )}
       {isValidElement(value) ? value : <Typography>{value}</Typography>}
     </Box>
   );
