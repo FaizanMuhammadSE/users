@@ -2,16 +2,17 @@ import { FC, useState } from 'react';
 import { User } from '../../api/controllers/users/types';
 import { useLocation } from 'react-router-dom';
 import { Box, Paper } from '@mui/material';
-import { BriefInfo } from '../../components/BriefInfo';
 import { ICON_NAMES } from '../../components/InteractiveIcons/types';
 import { convertUTCIntoLocalDateTime } from '../../utils';
-import InteractiveIcons from '../../components/InteractiveIcons/InteractiveIcons';
+import { InteractiveIcons, BriefInfo, MapBox } from '../../components';
 import styles from './DetailContainer.module.scss';
 
 export const DetailContainer: FC = () => {
   const location = useLocation();
   const user: User = location.state || {};
   const { name, dob, location: userLocation, phone, login } = user;
+  const longitude = +(userLocation?.coordinates.longitude ?? 0);
+  const latitude = +(userLocation?.coordinates.latitude ?? 0);
   const initialSelect = ICON_NAMES.PROFILE;
   const [texts, setTexts] = useState(getProfileTexts());
 
@@ -103,6 +104,7 @@ export const DetailContainer: FC = () => {
         onIconClick={handleIconClick}
         initialSelect={initialSelect}
       />
+      <MapBox latitude={latitude} longitude={longitude} />
     </Box>
   );
 };
