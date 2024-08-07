@@ -3,7 +3,6 @@
 ## Table of Contents
 
 - Introduction
-- Getting Started
 - Prerequisites
 - Installation
 - Running the Application
@@ -14,10 +13,18 @@
 
 ## Introduction
 
-Random user app allow to see users listing, on home page, user can see List of users in the form of table,
-Each user profile and nationality flag has been displayed as well, Date of Birth is well formatted.
-User can change pages has pagination has been applied, similarly user can change gender, and can search listed users on the basis of FirstName, LastName, Nationality, City, there is a Eye Icon as well, through which user can see Detail of any user, clicking on Eye button will take user to Detail Page, where all necessary informations has been displayed, and map is integrated at bottom.
-Now user can navigate back, and following things will be persisted, pageNumber, and gender, so user can see exactly the same page which he/she left.
+The Random User App allows users to view a list of profiles on the home page. Here’s what you can do:
+
+- `View User List:` See all users in a neat table format.
+- `Profile Details:` Each user’s profile and their nationality flag
+  are displayed, with dates of birth well formatted.
+- `Pagination:` Easily switch between pages to see more users.
+- `Filter by Gender:` Filter the list by gender.
+- `Search Users:` Search users by their first name, last name, nationality, or city.
+- `View Details:` Click the eye icon to see detailed information about any user.
+  This takes you to a detailed page with all the necessary information, including an integrated map at the bottom.
+- When you navigate back from the detail page, the app remembers the page number
+  and gender filter you were using, so you’ll see the exact same view you left.
 
 ## Prerequisites
 
@@ -29,11 +36,12 @@ Ensure you have the following installed on your local machine:
 
 - Clone the project on your local machine
 - Contact `Saira Kamran` to obtain the necessary environment variables.
-- Create a .env file at the root level of the project.
-- Paste all the environment variables into the .env file.
+- Create a `.env` file at the root level of the project.
+- Paste all the environment variables into the `.env` file.
 - Install dependencies:
 
-```npm install
+```
+npm run i
 npm run dev
 ```
 
@@ -47,17 +55,17 @@ The application should now be up and running.
 
 The project's codebase is organized as follows:
 
-- src/: All source code resides here.
-- pages/: Contains all the pages of the application.
-- containers/: Where multiple components are rendered together.
-- components/: Each component is designed to perform a single task.
+- `src/:` All source code resides here.
+- `pages/:` Contains all the pages of the application.
+- `containers/:` Where multiple components are rendered together.
+- `components/:` Each component is designed to perform a single task.
 - Each component folder contains:
 - style file
 - types file
 - component file
-- API Controller: Created to enhance reusability.
-- Layout: Created the layout of the application.
-- Reusable Hooks: Created reusable hooks.
+- `API Controller:` Created to enhance reusability.
+- `Layout:` Created the layout of the application.
+- `Reusable Hooks:` Created reusable hooks.
 
 ## Packages Used
 
@@ -68,11 +76,13 @@ React-Router-Dom
 React-Query (for chaching APIs)
 Axios
 MUI components
+Dayjs
 
 ## Questions Asked
 
-- Question: Search functionality on listing page?
-  - Answer: On the listing page, there were two possibilities for listing, either through Table or through Card, so
+- `Question:` Search functionality on listing page?
+- `Answer: ` Completed
+  - On the listing page, there were two possibilities for listing, either through Table or through Card, so
   - I went with the Table approach.
   - Here is how I achieved the search functionality:
   - I kept the search context to the visible records, meaning just records on the current page will take
