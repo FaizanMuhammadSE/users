@@ -40,13 +40,6 @@ export const theme = createTheme({
         },
       },
     },
-    MuiChip: {
-      styleOverrides: {
-        root: {
-          borderRadius: 5,
-        },
-      },
-    },
   },
   spacing: 8,
   breakpoints: {
