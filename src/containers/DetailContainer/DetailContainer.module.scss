@@ -1,0 +1,17 @@
+.mediaBackground {
+  height: 20vh;
+  background-color: gray;
+  position: relative;
+  border-radius: 10px;
+}
+
+.media {
+  position: absolute; /* Absolute positioning relative to the container */
+  bottom: -50%; /* Move the image down so that it overflows */
+  left: 50%; /* Center the image horizontally */
+  transform: translateX(-50%); /* Center the image horizontally */
+  width: 150px; /* Adjust the width as needed */
+  height: 150px; /* Adjust the height as needed */
+  border-radius: 50%; /* Make the image circular */
+  border: 5px solid whitesmoke;
+}
