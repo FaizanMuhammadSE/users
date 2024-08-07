@@ -1,6 +1,6 @@
 import { IRow } from '../../components/Table/types';
 import { InfoWithMedia } from '../../components/InfoWithMedia';
-import { AllUsersResponseType } from '../../api/controllers/users/types';
+import { User } from '../../api/controllers/users/types';
 import { convertUTCIntoLocalDateTime, nationalityFullForm } from '../../utils';
 
 export const columnDefs = [
@@ -12,8 +12,28 @@ export const columnDefs = [
   { id: 5, field: 'Date of Birth' },
 ];
 
-export const getRowsFromData = (data: AllUsersResponseType | undefined) =>
-  data?.results.map((user) => {
+export const getFilteredData = (
+  users: User[] | undefined,
+  searchText: string
+) => {
+  return (
+    users?.filter((user) =>
+      [
+        user.name?.first,
+        user.name?.last,
+        `${user.name?.first} ${user.name?.last}`,
+        nationalityFullForm(user.nat ?? ''),
+        user.location?.city,
+      ].some(
+        (param) =>
+          !!param && param.toLowerCase().includes(searchText.toLowerCase())
+      )
+    ) ?? []
+  );
+};
+
+export const getRowsFromData = (users: User[] | undefined) =>
+  users?.map((user) => {
     const userName = `${user.name?.first} ${user.name?.last}`;
     const nationality = user.nat;
     return {
