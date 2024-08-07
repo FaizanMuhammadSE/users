@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material';
 import { theme } from './theme';
-import { Layout } from './containers/Layout/Layout';
+import { Layout } from './containers';
 import { Router } from './routes';
 import { QueryClientProvider } from 'react-query';
 import { queryClient } from './cache';
