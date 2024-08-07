@@ -30,7 +30,7 @@ export const Table: React.FC<ITableProps> = ({
     onPageChange(newPage);
   };
 
-  if (loading) return <TableSkeleton />;
+  if (loading) return <TableSkeleton rows={8} cols={columnDefs.length} />;
   return (
     <TableContainer component={Paper}>
       <MUITable>
