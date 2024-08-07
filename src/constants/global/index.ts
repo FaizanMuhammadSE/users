@@ -23,3 +23,8 @@ export const NATIONALITIES: { [x: string]: string } = {
   UA: 'Ukraine',
   US: 'United States',
 };
+export const GENDER_LIST = [
+  { label: 'All', value: 'all' },
+  { label: 'Male', value: 'male' },
+  { label: 'Female', value: 'female' },
+];
