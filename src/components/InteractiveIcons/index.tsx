@@ -23,7 +23,7 @@ const iconList = [
   { name: ICON_NAMES.LOCK, icon: <Lock fontSize='large' /> },
 ];
 
-const InteractiveIcons: FC<IInteractiveIconsProps> = ({
+export const InteractiveIcons: FC<IInteractiveIconsProps> = ({
   initialSelect,
   onIconClick,
 }) => {
@@ -52,5 +52,3 @@ const InteractiveIcons: FC<IInteractiveIconsProps> = ({
     </div>
   );
 };
-
-export default InteractiveIcons;
