@@ -3,12 +3,14 @@ import { useQuery } from 'react-query';
 import { getUsers } from '../../api';
 import { IRow } from '../../components/Table/types';
 import { Table } from '../../components';
-import { PAGE_SIZE } from '../../constants';
+import { PAGE_SIZE, paths } from '../../constants';
 import { Visibility } from '@mui/icons-material';
 import { columnDefs, getRowsFromData } from './utils';
+import { useNavigate } from 'react-router-dom';
 
 export const HomeContainer: FC = () => {
   const [page, setPage] = useState(0);
+  const navigate = useNavigate();
   const { isLoading, data } = useQuery({
     queryKey: ['users', page],
     queryFn: () => getUsers(page + 1), // 1-based-index
@@ -17,8 +19,7 @@ export const HomeContainer: FC = () => {
 
   const handleViewClick = (rowData: IRow) => {
     const user = data?.results.find((user) => user.login?.uuid === rowData.id);
-    console.log(`${user?.name?.first} ${user?.name?.last}`);
-    // TODO: Navigate to user detail page
+    user && navigate(paths.USER_DETAIL, { state: user });
   };
 
   const actions = [
