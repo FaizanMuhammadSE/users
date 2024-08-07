@@ -9,7 +9,7 @@ export const BriefInfo: FC<IBriefInfoProps> = ({
 }) => {
   return (
     <Box className={styles.container} {...boxProps}>
-      <Typography variant='h5' color='#999' className={styles.typingText}>
+      <Typography variant='h5' color='gray' className={styles.typingText}>
         {text1}
       </Typography>
       <Typography variant='h2' className={styles.typingText}>

@@ -1,0 +1,21 @@
+.iconsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between icons */
+  padding: 20px;
+}
+
+.iconButton {
+  transition: color 0.3s, transform 0.3s;
+  color: #555; /* Default color */
+
+  &:hover {
+    color: #1976d2; /* Change color on hover */
+    transform: scale(1.1); /* Slightly scale up the icon on hover */
+  }
+}
+
+.selected {
+  color: #1976d2 !important; /* Selected icon color */
+  transform: scale(1.3); /* Slightly scale up the icon on hover */
+}
