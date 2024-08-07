@@ -17,7 +17,6 @@ export const DetailContainer: FC = () => {
   const [texts, setTexts] = useState(getProfileTexts());
 
   const handleIconClick = (iconName: ICON_NAMES) => {
-    console.log(iconName);
     switch (iconName) {
       case ICON_NAMES.PROFILE: {
         setTexts(getProfileTexts());
