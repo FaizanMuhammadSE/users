@@ -24,6 +24,7 @@ const makeRowCells = (noOfCells: number) =>
  * @param rows is the number of rows in TableSkeleton (default=10)
  * @param cols is the number of cols in each row (default=5)
  */
+
 export const TableSkeleton: React.FC<ISkeletonProps> = ({
   rows = 10,
   cols = 5,

@@ -97,7 +97,7 @@ export const DetailContainer: FC = () => {
         text1={texts.text1}
         text2={texts.text2}
         pt='100px'
-        key={texts.text1} // remount on key change
+        key={texts.text1} // remount component on key change
       />
       <InteractiveIcons
         onIconClick={handleIconClick}

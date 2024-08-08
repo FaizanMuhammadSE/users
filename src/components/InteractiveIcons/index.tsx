@@ -11,6 +11,25 @@ import {
 import styles from './InteractiveIcons.module.scss'; // Import the Sass module
 import { IInteractiveIconsProps, ICON_NAMES } from './types';
 
+/**
+ * InteractiveIcons Component
+ *
+ * This component renders a set of interactive icons. It supports an initial selected icon and
+ * an event handler for icon clicks.
+ *
+ * @component
+ * @param {object} props - The props for the InteractiveIcons component.
+ * @param {number} props.initialSelect - The name of the initially selected icon.
+ * @param {function} props.onIconClick - The function to call when an icon is clicked. Receives the name of the clicked icon as an argument.
+ * @returns {JSX.Element} The rendered InteractiveIcons component.
+ *
+ * @example
+ * <InteractiveIcons
+ *   initialSelect={ICON_NAMES.EMAIL}
+ *   onIconClick={(name) => console.log(`Icon ${name} clicked`)}
+ * />
+ */
+
 const iconList = [
   {
     name: ICON_NAMES.PROFILE,

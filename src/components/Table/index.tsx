@@ -17,6 +17,50 @@ import { PAGE_SIZE, TABLE_HEADER_BG_COLOR } from '../../constants';
 import styles from './Table.module.scss';
 import { NoDataBox } from '../NoDataBox';
 
+/**
+ * Table Component
+ *
+ * This component renders a table with support for displaying data rows, pagination, and custom actions.
+ * It includes options to handle loading states, define column headers, and manage page changes.
+ *
+ * @component
+ * @param {object} props - The props for the Table component.
+ * @param {IColumnDef[]} props.columnDefs - The definitions for the table columns. Each column definition includes an ID and a field, which can be a string or ReactNode.
+ * @param {IRow[]} props.rows - The data rows to display in the table. Each row includes an ID and an array of cell values.
+ * @param {boolean} props.loading - Indicates whether the table is currently loading data.
+ * @param {number} props.page - The current page number for pagination.
+ * @param {number} props.total - The total number of rows available for pagination.
+ * @param {number} [props.startSerial=1] - The starting serial number for the table rows (default is 1).
+ * @param {IAction[]} [props.actions] - Optional custom actions to render in the table. Each action includes an ID, an icon, an aria-label, and an onClick handler that receives the row data.
+ * @param {function} props.onPageChange - The callback function to handle page changes. Receives the new page number as an argument.
+ * @returns {JSX.Element} The rendered Table component.
+ *
+ * @example
+ * <Table
+ *   columnDefs={[
+ *     { id: 'name', field: 'Name' },
+ *     { id: 'age', field: 'Age' },
+ *   ]}
+ *   rows={[
+ *     { id: 1, rowCells: ['John Doe', 30] },
+ *     { id: 2, rowCells: ['Jane Smith', 25] },
+ *   ]}
+ *   loading={false}
+ *   page={1}
+ *   total={100}
+ *   startSerial={1}
+ *   actions={[
+ *     {
+ *       id: 'edit',
+ *       icon: <EditIcon />,
+ *       ariaLabel: 'Edit',
+ *       onClick: (rowData) => console.log(`Edit row with ID ${rowData.id}`)
+ *     },
+ *   ]}
+ *   onPageChange={(page) => console.log(`Page changed to ${page}`)}
+ * />
+ */
+
 export const Table: React.FC<ITableProps> = ({
   rows,
   page,
