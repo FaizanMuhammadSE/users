@@ -69,14 +69,14 @@ The project's codebase is organized as follows:
 
 ## Packages Used
 
-(Here, you can list the packages used in the project)
-
-React
-React-Router-Dom
-React-Query (for chaching APIs)
-Axios
-MUI components
-Dayjs
+- React
+- React-Router-Dom
+- React-Query (for chaching APIs)
+- Axios
+- MUI components
+- Dayjs
+- MapBox GL
+- Flag Icons
 
 ## Questions Asked
 
