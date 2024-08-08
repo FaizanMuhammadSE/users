@@ -1,19 +1,25 @@
 import { useSearchParams } from 'react-router-dom';
 import { URLStateConfigs } from './types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { inOriginalType } from '../../constants';
 
-export const useUrlState = ({ name, value }: URLStateConfigs) => {
+export const useUrlState = <T>({ name, value }: URLStateConfigs<T>) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const isInUrl = searchParams.get(name);
-  const [state, setState] = useState(isInUrl ?? value);
+  const [state, setState] = useState(
+    isInUrl ? inOriginalType(value, isInUrl) : value
+  );
 
-  useEffect(() => {
+  const setStateValue = (newVal: typeof value) => {
+    // Setting State Locally
+    setState(newVal);
+
+    // On changing, saving it in URL
     setSearchParams((pre) => {
       const otherSearchParams: { [x: string]: string } = {};
       pre.forEach((value, key) => (otherSearchParams[key] = value));
-      return { ...otherSearchParams, [name]: state };
+      return { ...otherSearchParams, [name]: String(newVal) };
     });
-  }, [state]);
-
-  return { state, setState };
+  };
+  return [state, setStateValue] as [T, typeof setState]; // returning Tuple (fixed size array)
 };

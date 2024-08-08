@@ -1,1 +1,4 @@
-export type URLStateConfigs = { name: string; value: string };
+export type URLStateConfigs<T> = {
+  name: string;
+  value: T;
+};

@@ -19,7 +19,7 @@ The Random User App allows users to view a list of profiles on the home page. He
 - `Profile Details:` Each user’s profile and their nationality flag
   are displayed, with dates of birth well formatted.
 - `Pagination:` Easily switch between pages to see more users.
-- `Filter by Gender:` Filter the list by gender.
+- `Filter by Gender:` Filter the list by nationality, gender.
 - `Search Users:` Search users by their first name, last name, nationality, or city.
 - `View Details:` Click the eye icon to see detailed information about any user.
   This takes you to a detailed page with all the necessary information, including an integrated map at the bottom.
@@ -97,10 +97,16 @@ Dayjs
 
 ## Bonus Tasks Status
 
-Both Bonus Tasks completed
+Both Bonus Tasks completed with Extra Work as well
 
 - Integrate Map
 - Show Nationality Flag
+- Nationality Dropdown Added as Filter
+- All Filters are persisted in URL
+- PageNumber also persisted in URL
+- On Coming Back to Previous Page, won't trigger API Call (Caching in-place)
+- Navigating back from Detail Page, will yeild prior data
+  - PageNumber, Nationality Filter, Gender Filter
 
 # Blockers/Issues Faced
 
