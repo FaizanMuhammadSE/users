@@ -8,7 +8,8 @@ export const theme = createTheme({
   },
   typography: {
     fontFamily: 'Inter, Roboto, sans-serif',
-    fontSize: 17.5, // 12.5px
+    htmlFontSize: 16, // telling MUI fontSize of html element in pixels
+    fontSize: 12.5, // 12.5px
     h1: {
       fontSize: '2.4rem',
       fontWeight: 700,
@@ -26,7 +27,7 @@ export const theme = createTheme({
       fontWeight: 500,
     },
     h6: {
-      fontSize: '1.25rem',
+      fontSize: '1rem',
       fontWeight: 500,
     },
   },

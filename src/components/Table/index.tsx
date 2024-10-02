@@ -83,16 +83,16 @@ export const Table: React.FC<ITableProps> = ({
           <TableHead sx={{ bgcolor: TABLE_HEADER_BG_COLOR }}>
             <TableRow>
               <TableCell>
-                <Typography variant='h5'>Sr #</Typography>
+                <Typography variant='h6'>Sr #</Typography>
               </TableCell>
               {columnDefs.map((columnDef) => (
                 <TableCell key={columnDef.id}>
-                  <Typography variant='h5'>{columnDef.field}</Typography>
+                  <Typography variant='h6'>{columnDef.field}</Typography>
                 </TableCell>
               ))}
               {actions && actions.length > 0 && (
                 <TableCell className={styles.actionCol}>
-                  <Typography variant='h5'>Actions</Typography>
+                  <Typography variant='h6'>Actions</Typography>
                 </TableCell>
               )}
             </TableRow>
