@@ -1,4 +1,4 @@
 export const paths = {
-  HOMEPAGE: '/',
-  USER_DETAIL: '/user',
+  HOMEPAGE: '/site/about/',
+  USER_DETAIL: '/site/about/user',
 };
